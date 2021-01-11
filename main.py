@@ -34,7 +34,16 @@ ConfigMoveSetVar=ConfigMoveSetVar.rstrip(',')
 ConfigMoveSet=tuple(eval(ConfigMoveSetVar))
 fh.close()
 
-fh=open("Scores.dat","rb+")
+initialWinsLosses={"Wins":0,"Losses":0}
+
+try:
+    fh=open("Scores.dat","rb+")
+except FileNotFoundError:
+    f=open("Scores.dat","wb")
+    pickle.dump(initialWinsLosses,f)
+    f.close()
+    fh=open("Scores.dat","rb+")
+
 WinLoose=pickle.load(fh)
 fh.close()
 
