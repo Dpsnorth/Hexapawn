@@ -3,7 +3,7 @@ from tkinter import messagebox
 import pickle
 import os
 
-window = Tk()
+window=Tk()
 window.geometry("400x400")
 
 def RunFile():
@@ -26,5 +26,5 @@ Scores=Button(window,text="Scores",command=CurrentScore,height=2,width=10)
 
 StartGame.place(relx=0.5, rely=0.4, anchor=CENTER)
 Scores.place(relx=0.5, rely=0.6, anchor=CENTER)
-  
+
 window.mainloop()
